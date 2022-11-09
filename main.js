@@ -27,21 +27,23 @@ let textArea = document.querySelector(".textArea");
 textArea.addEventListener('input',()=>{
 	let inputedCharacter = textArea.value.split("")[index];
 	let characterHaveToInput = characterArray[index];
-
+	let lenghtOfInput = textArea.value.split("");
+	let lengthOfHaveToInput = characterArray.length;
+	console.log(lenghtOfInput.length);
+	console.log(lengthOfHaveToInput);
+	if(lenghtOfInput.length == lengthOfHaveToInput){
+		window.location.reload();		
+	}
 let targetSpan = targetClass.querySelectorAll("span")[index];
 if(inputedCharacter === characterHaveToInput){
 	//check the span inner html if match with the character you have typed then add class else do nothing 
 	targetSpan.classList.remove("hoynai");	
 	targetSpan.classList.add("hoisay");
-		
-		console.log(targetSpan);
 	index++;
 
 }else{
 	targetSpan.classList.remove("hoisay");
-	console.log(targetSpan);
 	targetSpan.classList.add("hoynai");
-
 }
 
 })
